@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Comment from "./../Component/CommentComponent";
+import Comment from './../Component/CommentComponent';
 import { apiRequestComment } from './../Action/CommentAction';
 
 const mapStateToProps = (state) => ({ comment: state.commentState.comment });

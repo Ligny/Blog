@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import List from './Posts/Container/PostContainer';
 import Comment from './Comments/Container/CommentContainer';
-import { store } from './Store';
+import { store } from './store';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

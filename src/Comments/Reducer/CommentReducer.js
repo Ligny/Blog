@@ -14,7 +14,6 @@ const initialState: StateType = {
 export default function FetchingState(state: StateType = initialState, action: any): StateType {
     switch (action.type) {
         case API_REQUEST_COMMENT_SUCCESS: {
-            console.log(action.payload);
             const { comment } = action.payload;
             return {
                 ...state,
