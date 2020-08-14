@@ -1,9 +1,9 @@
-import { type StateType } from './../Type/CommentType';
+import { type StateType } from './../Type/commenttype';
 import {
     API_REQUEST_COMMENT,
     API_REQUEST_COMMENT_SUCCESS,
     API_REQUEST_COMMENT_FAILURE
-} from './../Action/CommentAction';
+} from './../Action/commentaction';
 
 const initialState: StateType = {
     comment: [],

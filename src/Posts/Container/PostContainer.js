@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import List from './../Component/PostComponent';
-import { apiRequestPost } from './../Action/PostAction';
+import List from './../Component/postcomponent';
+import { apiRequestPost } from './../Action/postaction';
 
 const mapStateToProps = (state) => ({ list: state.postState.list });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { type ListType } from './../Type/PostType';
+import { type ListType } from './../Type/posttype';
 
 type Props = {list: ListType[]}
 

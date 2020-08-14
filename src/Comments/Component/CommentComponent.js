@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { type CommentType } from './../Type/CommentType';
+import { type CommentType } from './../Type/commenttype';
 
 type Props = {comment: CommentType[]}
 
@@ -28,7 +28,7 @@ const Comment = ({comment, apiRequestComment, match}: Props): React$Element<*> =
     return(
         <div>
             <center><h1>Post {match.params.id}</h1></center>
-            <Link to={"/"}>Back to Posts</Link>
+            <Link to={"/posts"}>Back to Posts</Link>
             {memoizedcomment}
         </div>
     )

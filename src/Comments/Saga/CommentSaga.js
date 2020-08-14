@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-import { apiSuccessComment, apiFailureComment, API_REQUEST_COMMENT } from './../Action/CommentAction';
+import { apiSuccessComment, apiFailureComment, API_REQUEST_COMMENT } from './../Action/commentaction';
 
 const fetchComments = async (id) => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);

@@ -2,7 +2,7 @@
 
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-import { apiSuccessPost, apiFailurePost, API_REQUEST_POST } from './../Action/PostAction';
+import { apiSuccessPost, apiFailurePost, API_REQUEST_POST } from './../Action/postaction';
 
 const fetchData = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");

@@ -1,11 +1,11 @@
 // @flow
 
-import { type StateType } from './../Type/PostType';
+import { type StateType } from './../Type/posttype';
 import {
     API_REQUEST_POST,
     API_REQUEST_POST_SUCCESS,
     API_REQUEST_POST_FAILURE
-} from './../Action/PostAction';
+} from './../Action/postaction';
 
 const initialState: StateType = {
     list: [],
