@@ -1,14 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const defaultValue = {
     username: "",
     email: ""
 };
 
-const Register = ({ signin, apiRequestRegister, loginRequest }) => {
+const Register = ({ log, apiRequestRegister, loginRequest }) => {
 
     const { register, handleSubmit, errors, reset } = useForm();
 
@@ -19,12 +19,19 @@ const Register = ({ signin, apiRequestRegister, loginRequest }) => {
     }, []);
 
 
+    useEffect(() => {
+        var status = localStorage?.getItem("status");
+        if (status === "connected") {
+            history.push("/posts");
+        }
+    }, []);
+
     useEffect (() => {
-        if (signin.loginState.login === "success") {
+        if (log.loginState.login === "success") {
             history.push("/posts");
         }
         reset(defaultValue);
-    }, [signin.loginState.login]);
+    }, [log.loginState.login]);
 
     const submit = (data) => {
         loginRequest(data);
@@ -38,9 +45,12 @@ const Register = ({ signin, apiRequestRegister, loginRequest }) => {
         <form onSubmit={handleSubmit(submit)}>
             <input type="text" placeholder="username" name="username" ref={register({ required: true, minLength: 3 })}/>
             {errors.username && (<p>bad input</p>)}
-            <input type="text" placeholder="email" name="email" ref={register}/>
+            <br/>
+            <br/>
             <input type="submit" value="Submit" />
         </form>
+        <br/>
+        <Link to={"/signup"} >Sign up</Link>
         </center>
     )
 };

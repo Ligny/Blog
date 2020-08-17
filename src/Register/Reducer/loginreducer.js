@@ -8,7 +8,7 @@ import {
 } from './../Action/loginaction';
 
 const initialState = {
-    login: 'test',
+    login: '',
     error: null
 };
 

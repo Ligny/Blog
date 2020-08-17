@@ -15,9 +15,9 @@ function* SagaLogin (action) {
         const { data } = action.payload;
         const State = yield select();
         const connected = yield call(onSubmit, State.registerState.register, data);
-        console.log(connected);
         if (connected === true) {
             yield put(loginSuccess());
+            localStorage.setItem('status', 'connected');
         } else {
             yield put(loginFailure());
         }

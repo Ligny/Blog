@@ -4,7 +4,7 @@ import Register from './../Component/registercomponent';
 import { apiRequestRegister } from './../Action/registeraction';
 import { loginRequest } from './../Action/loginaction';
 
-const mapStateToProps = (state) => ({ signin: state });
+const mapStateToProps = (state) => ({ log: state });
 
 const mapDispatchToProps = { apiRequestRegister, loginRequest };
 

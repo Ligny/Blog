@@ -28,13 +28,16 @@ const List = ({elem, apiRequestPost, logOut}): React$Element<*> => {
 
     function handleLogout() {
         logOut();
+        localStorage.clear();
         history.push("/");
     };
 
     return(
         <div>
-            <center><h1>Blog</h1></center>
-            <div onClick={handleLogout}>Log out</div>
+            <center>
+            <h1>Blog</h1>
+            <button onClick={handleLogout}>Log out</button>
+            </center>
             {memoizedList}
         </div>
     )
