@@ -1,10 +1,7 @@
-
 import { call, put, takeLatest, select } from 'redux-saga/effects';
 import { loginSuccess, loginFailure, LOGIN_REQUEST } from './../Action/loginaction';
 
 const onSubmit = (register, data) => {
-    // console.log(data);
-    // console.log(register);
     const found = register.find(item => item.username === data.username);
     if (found) {
         return true

@@ -1,21 +1,21 @@
 import React from 'react';
 import { useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { type ListType } from './../Type/posttype';
 
-type Props = {list: ListType[]}
+const List = ({elem, apiRequestPost, logOut}): React$Element<*> => {
 
-const List = ({list, apiRequestPost}: Props): React$Element<*> => {
+    let history = useHistory();
 
     useEffect(() => {
-        if (list.length < 1) {
+        if (elem.postState.list.length < 1) {
             apiRequestPost();
         }
     }, []);
 
     const memoizedList = useMemo((): array<ListType> => {
-        return list?.map((item) => (
+        return elem.postState.list?.map((item) => (
             <div key={item.id}>
                 <hr/>
                 <h4>{item.title}</h4>
@@ -24,11 +24,17 @@ const List = ({list, apiRequestPost}: Props): React$Element<*> => {
                 <hr/>
             </div>
         ));
-    }, [list]);
+    }, [elem.postState.list]);
+
+    function handleLogout() {
+        logOut();
+        history.push("/");
+    };
 
     return(
         <div>
             <center><h1>Blog</h1></center>
+            <div onClick={handleLogout}>Log out</div>
             {memoizedList}
         </div>
     )

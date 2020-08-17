@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 const defaultValue = {
     username: "",
@@ -11,15 +12,23 @@ const Register = ({ signin, apiRequestRegister, loginRequest }) => {
 
     const { register, handleSubmit, errors, reset } = useForm();
 
+    let history = useHistory();
+
     useEffect(() => {
         apiRequestRegister();
     }, []);
 
+
+    useEffect (() => {
+        if (signin.loginState.login === "success") {
+            history.push("/posts");
+        }
+        reset(defaultValue);
+    }, [signin.loginState.login]);
+
     const submit = (data) => {
         loginRequest(data);
-        reset(defaultValue);
     }
-
 
     return(
         <center>

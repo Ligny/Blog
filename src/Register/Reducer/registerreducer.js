@@ -1,5 +1,6 @@
 // @flow
 
+import { StateType } from './../Type/registertype';
 import {
     API_REQUEST_REGISTER,
     API_REQUEST_REGISTER_SUCCESS,
